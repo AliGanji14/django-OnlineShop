@@ -1,5 +1,5 @@
 venv
+.env
 .idea
 __pycashe__
 *.pyc
-.env
