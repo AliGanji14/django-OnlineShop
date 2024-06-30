@@ -2,3 +2,4 @@ venv
 .idea
 __pycashe__
 *.pyc
+.env
