@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, reverse
 from django.views import generic
+from django.contrib import messages
 
 from .forms import CommentForm
 from .models import Product, Comment
