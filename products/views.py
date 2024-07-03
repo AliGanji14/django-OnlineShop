@@ -1,6 +1,5 @@
 from django.shortcuts import get_object_or_404, reverse
 from django.views import generic
-from cart.forms import AddToCartProductForm
 from django.contrib import messages
 
 from .forms import CommentForm
@@ -21,7 +20,6 @@ class ProductDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['comment_form'] = CommentForm()
-        context['add_to_cart_form'] = AddToCartProductForm()
         return context
 
 
