@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'jalali_date',
+    'ckeditor',
 
     # local apps
     'accounts.apps.AccountsConfig',
@@ -154,6 +155,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # media
 MEDIA_URL = '/media/'

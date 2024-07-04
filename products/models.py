@@ -3,11 +3,12 @@ from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from ckeditor.fields import RichTextField
 
 
 class Product(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = RichTextField()
     price = models.PositiveBigIntegerField(default=0)
     status = models.BooleanField(default=True)
     image = models.ImageField(_('product image'), upload_to='product/product_cover/', blank=True)
