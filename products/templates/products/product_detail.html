@@ -4,6 +4,8 @@
 {% load comment_tags %}
 {% load i18n %}
 {% load jalali_tags %}
+{% load humanize %}
+{% load persian_translation_tags %}
 {% block page_title %}Product detail {{ product.title }}{% endblock %}
 
 
@@ -41,7 +43,7 @@
                                 <h3 class="product-title mb--20">{{ product.title }}</h3>
                                 <p class="product-short-description mb--20">{{ product.description }}</p>
                                 <div class="my-5 py-5 product-price-wrapper mb--25">
-                                    <span class="money text-success">{{ product.price }}{% translate '&' %}</span>
+                                    <span class="money text-success">{{ product.price|intcomma:False|translate_number }}{% translate '&' %}</span>
                                     <span class="price-separator">-</span>
                                     <span class="money old-price text-danger">۲۱۰,۰۰۰ تومان</span>
                                 </div>
@@ -140,7 +142,7 @@
                                                                          alt="Review Avatar" class="review__avatar p-3">
                                                                     <div>
                                                                         <div class="review__meta" dir="ltr">
-                                                                            <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%B/%d' }}</span>
+                                                                            <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y %B'|translate_number }}</span>
                                                                             <span class="review__dash">-</span>
                                                                             <strong class="review__author px-4">{{ comment.author.username }}</strong>
                                                                         </div>

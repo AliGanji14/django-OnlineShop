@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.humanize',
+
     # third party apps
     'rosetta',
     'crispy_forms',
@@ -53,6 +55,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
+    'persian_translate.apps.PersianTranslateConfig',
 ]
 
 MIDDLEWARE = [
@@ -134,7 +137,6 @@ LANGUAGES = (
     ('en', 'English'),
     ('fa', 'Persian'),
 )
-
 
 LOCALE_PATHS = (
     'templates/locale',
