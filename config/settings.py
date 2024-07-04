@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'allauth',
     'allauth.account',
+    'jalali_date',
 
     # local apps
     'accounts.apps.AccountsConfig',
@@ -133,6 +134,7 @@ LANGUAGES = (
     ('en', 'English'),
     ('fa', 'Persian'),
 )
+
 
 LOCALE_PATHS = (
     'templates/locale',
