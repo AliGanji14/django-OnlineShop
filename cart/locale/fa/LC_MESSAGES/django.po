@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-03 18:27+0330\n"
-"PO-Revision-Date: 2024-07-03 18:28+0330\n"
+"POT-Creation-Date: 2024-07-04 14:15+0330\n"
+"PO-Revision-Date: 2024-07-04 14:22+0330\n"
 "Last-Translator: ali ganji <ali@email.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,3 +33,23 @@ msgstr "سبد خالی است! لطفا مقداری محصول را به سب�
 #: .\templates\cart\cart_detail.html:84
 msgid "Go shopping"
 msgstr "رفتن به فروشگاه"
+
+#: .\templates\cart\cart_sidebar.html:7
+msgid "cart"
+msgstr "سبد خرید"
+
+#: .\templates\cart\cart_sidebar.html:25 .\templates\cart\cart_sidebar.html:32
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\cart\cart_sidebar.html:31
+msgid "total"
+msgstr "جمع کل"
+
+#: .\templates\cart\cart_sidebar.html:36
+msgid "go to cart"
+msgstr "مشاهده سبد خرید"
+
+#: .\templates\cart\cart_sidebar.html:37
+msgid "checkout"
+msgstr "پرداخت"
