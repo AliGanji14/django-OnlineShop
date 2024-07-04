@@ -9,6 +9,7 @@ from ckeditor.fields import RichTextField
 class Product(models.Model):
     title = models.CharField(max_length=100)
     description = RichTextField()
+    short_description = models.CharField(max_length=300, blank=True)
     price = models.PositiveBigIntegerField(default=0)
     status = models.BooleanField(default=True)
     image = models.ImageField(_('product image'), upload_to='product/product_cover/', blank=True)
@@ -39,8 +40,8 @@ class Comment(models.Model):
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
-    body = models.TextField(verbose_name=_('Comment Text'))
-    stars = models.CharField(max_length=10, choices=PRODUCT_START, verbose_name=_('What is your stars?'))
+    body = models.TextField(_('Comment Text'))
+    stars = models.CharField(_('What is your stars?'), max_length=10, choices=PRODUCT_START)
     active = models.BooleanField(default=True)
     datetime_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
