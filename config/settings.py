@@ -53,11 +53,11 @@ INSTALLED_APPS = [
 
     # local apps
     'accounts.apps.AccountsConfig',
-    'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'persian_translate.apps.PersianTranslateConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [

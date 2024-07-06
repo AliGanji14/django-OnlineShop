@@ -1,11 +1,15 @@
+from pydoc import pager
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('', include('pages.urls')),
+                  path('', TemplateView.as_view(template_name='home.html'), name='home'),
+                  path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
                   path('accounts/', include('allauth.urls')),
                   path('products/', include('products.urls')),
                   path('cart/', include('cart.urls')),
