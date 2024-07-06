@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-03 20:39+0330\n"
-"PO-Revision-Date: 2024-07-03 20:42+0330\n"
+"PO-Revision-Date: 2024-07-06 16:46+0330\n"
 "Last-Translator: ali ganji <ali@email.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,11 +28,11 @@ msgstr "خروج "
 
 #: .\_base.html:99
 msgid "login"
-msgstr ""
+msgstr "ورود"
 
 #: .\_base.html:103
 msgid "signup"
-msgstr "ثبت نام کنید"
+msgstr "ثبت نام"
 
 #: .\account\email\email_confirmation_message.txt:5
 #, python-format

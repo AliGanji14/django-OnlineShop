@@ -1,22 +1,22 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+from django.utils.translation import gettext as _
 from products.models import Product
 
 
 class Order(models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    is_paid = models.BooleanField(default=False)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_("User"))
+    is_paid = models.BooleanField(_("Is Paid?"), default=False)
 
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    phone_number = models.CharField(max_length=11)
-    address = models.CharField(max_length=200)
+    first_name = models.CharField(_("First Name"), max_length=50)
+    last_name = models.CharField(_("Last Name"), max_length=50)
+    phone_number = models.CharField(_("Phone Number"), max_length=11)
+    address = models.CharField(_("Address"), max_length=200)
 
-    order_notes = models.CharField(max_length=350, blank=True)
+    order_notes = models.CharField(_("Order Notes"), max_length=350, blank=True)
 
-    datetime_created = models.DateTimeField(auto_now_add=True)
-    date_modified = models.DateTimeField(auto_now=True)
+    datetime_created = models.DateTimeField(_("Created"), auto_now_add=True)
+    date_modified = models.DateTimeField(_("Modified"), auto_now=True)
 
     def __str__(self):
         return f"Order {self.id}"
