@@ -194,3 +194,5 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 MESSAGE_TAGS = {
     messages_constants.ERROR: 'danger',
 }
+
+ZARINPAL_MERCHANT_ID = env('MERCHANT_ID')
