@@ -12,9 +12,11 @@ class Order(models.Model):
     last_name = models.CharField(_("Last Name"), max_length=50)
     phone_number = models.CharField(_("Phone Number"), max_length=11)
     address = models.CharField(_("Address"), max_length=200)
-
     order_notes = models.CharField(_("Order Notes"), max_length=350, blank=True)
+
     zarinpal_authority = models.CharField(max_length=255, blank=True)
+    zarinpal_ref_id = models.CharField(max_length=150, blank=True)
+    zarinpal_data = models.TextField(blank=True)
 
     datetime_created = models.DateTimeField(_("Created"), auto_now_add=True)
     date_modified = models.DateTimeField(_("Modified"), auto_now=True)
