@@ -27,13 +27,6 @@
                                                                     <img src="{{ product.image.url }}" alt="Products">
                                                                 {% endif %}
                                                             </a>
-                                                            <div class="ShoppingYar-product-action">
-                                                                <div class="product-action d-flex">
-                                                                    <a href="wishlist.html" class="action-btn">
-                                                                        <i class="flaticon flaticon-like"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
                                                         </figure>
                                                         <div class="product-info">
                                                             <h3 class="product-title mb--15">
@@ -67,13 +60,17 @@
                             </div>
                             <nav class="pagination-wrap mt--35 mt-md--25 pb-5">
                                 <ul class="pagination">
-                                    <li><a href="#" class="next page-number"><i
-                                            class="fa fa-angle-double-right"></i></a></li>
-                                    <li><span class="current page-number">1</span></li>
-                                    <li><a href="#" class="page-number">2</a></li>
-                                    <li><a href="#" class="page-number">3</a></li>
-                                    <li><a href="#" class="prev page-number"><i class="fa fa-angle-double-left"></i></a>
-                                    </li>
+                                    {% if page_obj.has_previous %}
+                                        <li><a href="?page={{ page_obj.previous_page_number }}"
+                                               class="next page-number"><i
+                                                class="fa fa-angle-double-right"></i></a></li>
+                                    {% endif %}
+                                    <li><span class="current page-number">{{ page_obj.number }}</span></li>
+                                    {% if page_obj.has_next %}
+                                        <li><a href="?page={{ page_obj.next_page_number }}" class="prev page-number"><i
+                                                class="fa fa-angle-double-left"></i></a>
+                                        </li>
+                                    {% endif %}
                                 </ul>
                             </nav>
                         </div>
@@ -82,26 +79,8 @@
             </div>
         </div>
         <!-- Main Content Wrapper Start -->
-
-        <!-- Search form Popup Start -->
-        <div class="searchform__popup" id="searchForm">
-            <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
-            <div class="searchform__body">
-                <p>در باکس زیر عبارت خود را وارد کنید</p>
-                <form class="searchform">
-                    <input type="text" name="popup-search" id="popup-search" class="searchform__input"
-                           placeholder="جستجو در بین محصولات...">
-                    <button type="submit" class="searchform__submit"><i
-                            class="flaticon flaticon-magnifying-glass-icon"></i></button>
-                </form>
-            </div>
-        </div>
-        <!-- Search form Popup End -->
         {% include 'cart/cart_sidebar.html' %}
-        <!-- Global Overlay Start -->
-        <div class="ShoppingYar-global-overlay"></div>
-        <!-- Global Overlay End -->
-
     </div>
     <!-- Main Wrapper End -->
 {% endblock %}
+

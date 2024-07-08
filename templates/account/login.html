@@ -1,16 +1,37 @@
 {% extends '_base.html' %}
-
 {% load crispy_forms_tags %}
 
-{% block page_title %}
-    Sign Up
-{% endblock %}
+{% block content%}
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+        <!-- Main Content Wrapper Start -->
+        <div class="main-content-wrapper">
+            <div class="page-content-inner pt--75 pb--80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-sm--50">
+                            <div class="login-box">
+                                <h3 class="heading__tertiary mb--30">ورود</h3>
+                                <form method="POST" class="form form--login">
+                                    {% csrf_token %}
+                                    {{ form|crispy }}
+                                    <div class="d-flex align-items-center mt--20">
+                                        <div class="form__group">
+                                            <input type="submit" value="ورود" class="btn-submit">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper Start -->
 
-{% block content %}
-    <h1>Log In</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <input type="submit" value="Log In">
-    </form>
+        <!-- Search form Popup End -->
+        {% include 'cart/cart_sidebar.html' %}
+    </div>
+    <!-- Main Wrapper End -->
+
+
 {% endblock %}

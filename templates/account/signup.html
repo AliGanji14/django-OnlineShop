@@ -3,14 +3,23 @@
 {% load crispy_forms_tags %}
 
 {% block page_title %}
-    Log In
+    sign up
 {% endblock %}
 
 {% block content %}
-    <h1>Sign Up</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <input type="submit" value="Sign Up">
-    </form>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="col-md-6">
+        <div class="register-box">
+            <h4 class="heading__tertiary mb--30">ثبت نام</h4>
+            <form method="POST" class="form form--login">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="form__group">
+                    <input type="submit" value="ثبت نام" class="btn btn-submit btn-style-1">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    {% include 'cart/cart_sidebar.html' %}
 {% endblock %}
