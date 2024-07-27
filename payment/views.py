@@ -79,17 +79,17 @@ from orders.models import Order
 #                 order.zarinpal_data = data
 #                 order.save()
 #
-#                 return HttpResponse('پرداخت شما با موفقیت انجام شد')
+#                 return HttpResponse('Your payment has been successfully completed')
 #
 #             elif payment_code == 101:
-#                 return HttpResponse('پرداخت شما با موفقیت انجام شد. البته این تراکنش قبلا ثبت شده است')
+#                 return HttpResponse('Your payment has been successfully completed. Of course, this transaction has already been registered')
 #
 #             else:
 #                 error_code = res.json()['errors']['code']
 #                 error_message = res.json()['errors']['message']
 #                 return HttpResponse(f'{error_code} {error_message}')
 #     else:
-#         return HttpResponse('تراکنش ناموفق بود.')
+#          return HttpResponse('The transaction was unsuccessful.')
 
 
 def payment_process_sandbox(request):
@@ -162,14 +162,14 @@ def payment_call_back_sandbox(request):
                 order.zarinpal_data = data
                 order.save()
 
-                return HttpResponse('پرداخت شما با موفقیت انجام شد')
+                return HttpResponse('Your payment has been successfully completed')
 
             elif payment_code == 101:
-                return HttpResponse('پرداخت شما با موفقیت انجام شد. البته این تراکنش قبلا ثبت شده است')
+                return HttpResponse('Your payment has been successfully completed. Of course, this transaction has already been registered')
 
             else:
                 error_code = res.json()['errors']['code']
                 error_message = res.json()['errors']['message']
                 return HttpResponse(f'{error_code} {error_message}')
     else:
-        return HttpResponse('تراکنش ناموفق بود.')
+        return HttpResponse('The transaction was unsuccessful.')
